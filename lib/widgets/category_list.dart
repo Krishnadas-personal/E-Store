@@ -35,8 +35,7 @@ class _CategoriesState extends State<Categories> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     screenWidth = MediaQuery.of(context).size.width;
-    return SingleChildScrollView(
-      child: Column(children: [
+    return Column(children: [
         const Padding(
           padding: EdgeInsets.only(top: 20.0),
           child: Text(
@@ -46,23 +45,25 @@ class _CategoriesState extends State<Categories> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 10.0),
+          padding: const EdgeInsets.only(top: 10.0,bottom: 10.0),
           child: Text(
             _currentAddress ?? "",
             style: const TextStyle(
                 color: Colors.white, fontSize: 20, fontWeight: FontWeight.w700),
           ),
         ),
-        ListView.builder(
-          primary: false,
-          shrinkWrap: true,
-          itemBuilder: (context, index) {
-            return item(index);
-          },
-          itemCount: widget.category.length,
+        Expanded(
+          child: ListView.builder(
+            primary: false,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return item(index);
+            },
+            itemCount: widget.category.length,
+          ),
         ),
-      ]),
-    );
+      ]);
+    
   }
 
   Widget item(int index) {
