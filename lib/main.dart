@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:e_store/provider/category_provider.dart';
 import 'package:e_store/screens/products_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:geolocator/geolocator.dart';
+
 import 'package:provider/provider.dart';
 
 import 'provider/products_provider.dart';
@@ -60,9 +60,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
 
 class MyHttpOverrides extends HttpOverrides {
   @override
